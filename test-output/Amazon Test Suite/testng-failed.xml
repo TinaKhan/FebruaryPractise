@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="4" name="Failed suite [Amazon Test Suite]">
+  <listeners>
+    <listener class-name="com.amazon.qa.test.listeners.ExtentReportListener"/>
+    <listener class-name="com.amazon.qa.test.listeners.TestAllureListener"/>
+  </listeners>
+  <test thread-count="5" verbose="4" name="Amazon sanity Test(failed)">
+    <classes>
+      <class name="com.amazon.qa.tests.HomePage_Prac01Test">
+        <methods>
+          <include name="quitBrowser"/>
+          <include name="setUp"/>
+          <include name="testtodaysDeal"/>
+          <include name="checknewReleases"/>
+        </methods>
+      </class> <!-- com.amazon.qa.tests.HomePage_Prac01Test -->
+    </classes>
+  </test> <!-- Amazon sanity Test(failed) -->
+</suite> <!-- Failed suite [Amazon Test Suite] -->

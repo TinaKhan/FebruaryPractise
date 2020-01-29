@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Amazon Test Suite" verbose="4">
+
+	<listeners>
+		<listener class-name="com.amazon.qa.test.listeners.ExtentReportListener" />
+		<listener class-name="com.amazon.qa.test.listeners.TestAllureListener" />
+
+	</listeners>
+
+	<test name="Amazon sanity Test">
+		<classes>
+			<class name="com.amazon.qa.tests.HomePage_Prac01Test" />
+			<!-- <class name="com.amazon.qa.tests.HomePageTest" /> -->
+			
+		</classes>
+	</test>
+</suite>
