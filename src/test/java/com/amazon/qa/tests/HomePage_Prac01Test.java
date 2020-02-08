@@ -1,10 +1,7 @@
 package com.amazon.qa.tests;
 import java.util.Properties;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +11,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import com.amazon.qa.test.base.BasePage;
 import com.amazon.qa.test.pages.HomePage_Prac01;
 
@@ -26,6 +22,7 @@ public class HomePage_Prac01Test extends BasePage {
 	HomePage_Prac01 lsm;
 	SoftAssert sa;
 	Select select;
+	JavascriptExecutor js;
 
 	@BeforeTest
 	public void setUp() {
@@ -43,8 +40,9 @@ public class HomePage_Prac01Test extends BasePage {
 
 	// Number#1
 	@Test(priority = 1, enabled = true)
-	public void testSearchField1() {
+	public void testSearchField1() throws InterruptedException {
 		lsm.checkSearchField();
+		Thread.sleep(5000);
 		}
 
 	// Number#2
@@ -86,8 +84,9 @@ public class HomePage_Prac01Test extends BasePage {
 
 	// Number#3 //SHORTEST FORM WITHOUT CREATING METHOD IN ANOTHER PAGE
 	@Test
-	public void findAGiftTest() {
+	public void findAGiftTest() throws InterruptedException {
 		lsm.verifyFindAGift();
+		Thread.sleep(5000);
 	}
 
 	// Number#3b //SHORTEST FORM
@@ -122,19 +121,42 @@ public class HomePage_Prac01Test extends BasePage {
 	public void giftCardsTest() {
 		lsm.verifyGiftCards();
 	}
-//	@Test
-//	public void testIreneRahmanBySearch() {
-//
-//		WebElement searchKey = driver.findElement(By.xpath("(//span[contains(text(),'Search')])[1]"));
-//		WebElement searchButton = driver.findElement(By.xpath("(//button[contains(text(),'Search')])[2]"));
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].click()", searchKey);
-//		js.executeScript(
-//				"document.getElementByXpath('(//input[@class='form-control dropdown-menu__input--search'])[2]']').value = 'Irene Rahman';");
-//		js.executeScript("arguments[0].click()", searchButton);
-//
-//	}
-//
+    @Test
+    public void SearchGmailAccount() throws InterruptedException {
+    	driver.navigate().to("https://accounts.google.com/");
+    	driver.findElement(By.xpath("(//div[@class='lCoei YZVTmd SmR8'])[2]")).sendKeys("tinak4781@gmail.com");
+    	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Lubna436");
+    	driver.findElement(By.xpath("(//span[@class='RveJvd snByac'])[1]")).click();
+    	driver.findElement(By.xpath("//span[@class='gb_Ia gbii']")).click();
+    	js.executeScript("window.scrollBy(0,3000)","");
+    	js.executeScript("window.scrollBy(0,-3000)","");
+    	driver.navigate().to("https://www.amazon.com/");
+    	Thread.sleep(50000);
+    	driver.navigate().back();
+    	Thread.sleep(5000);
+    	driver.navigate().forward();
+    	Thread.sleep(5000);
+    	//driver.navigate().refresh();
+    	//Ask Tofael Vi about the below codes
+    	//WebElement searchField = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		//WebElement submitButton = driver.findElement(By.xpath("//input[@tabindex='20']"));
+		
+		//js.executeScript("arguments[0].value='macbook air'", searchField); //to send keys
+		
+		//js.executeScript("arguments[0].click()", submitButton); //to do click
+		
+		//Thread.sleep(5000);
+		
+		//driver.navigate().to("https://accounts.google.com/");
+		
+		//org.openqa.selenium.Dimension ds = new org.openqa.selenium.Dimension(480, 620); //Dimension class to reset size
+		//driver.manage().window().setSize(ds);
+		//Thread.sleep(2000); //to see the change
+		//driver.manage().window().maximize();
+		//Thread.sleep(4000);
+		
+	}
+    
 //	// do the homework: find asad mohammmad from find a doctor
 //	@Test
 //	public void testFindADoctorByName() {

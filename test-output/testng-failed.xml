@@ -9,10 +9,19 @@
     <classes>
       <class name="com.amazon.qa.tests.HomePage_Prac01Test">
         <methods>
+          <include name="findAGiftTest"/>
+          <include name="registryTest"/>
           <include name="quitBrowser"/>
-          <include name="setUp"/>
+          <include name="giftCardsTest"/>
+          <include name="testSearchField1"/>
+          <include name="bookTest"/>
           <include name="testtodaysDeal"/>
           <include name="checknewReleases"/>
+          <include name="customerServic"/>
+          <include name="testsearchField2"/>
+          <include name="setUp"/>
+          <include name="SearchGmailAccount"/>
+          <include name="checkBestSeller"/>
         </methods>
       </class> <!-- com.amazon.qa.tests.HomePage_Prac01Test -->
     </classes>
