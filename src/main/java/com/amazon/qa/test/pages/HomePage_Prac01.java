@@ -23,6 +23,8 @@ public class HomePage_Prac01 extends BasePage {
 //	public boolean verifyApplicationLogo() {
 //		return elementUtil.doIsDisplayed(logo);
 //	}
+	//I need to practice
+	
 	@FindBy(xpath="//input[@id='twotabsearchtextbox']")
 	public static WebElement searchField1;
 	public void checkSearchField1() {
