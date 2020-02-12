@@ -15,7 +15,7 @@ import com.amazon.qa.test.base.BasePage;
 import com.amazon.qa.test.pages.HomePage_Prac01;
 
 public class HomePage_Prac01Test extends BasePage {
-//My name is Tanzina
+//My name is Lubna
 	WebDriver driver;
 	BasePage basePage;
 	Properties prop;
